@@ -4,7 +4,7 @@ A pure HTML/CSS implementation of pie charts using SASS/SCSS.
 
 **USAGE**
 ---------------------------------------
-The CSS is applied through the @mixin pie. To use the mixin, simply create a div with class "pie-container" and the html5 data-attribute of "data-slices":
+The CSS is applied through the @mixin pie. To use the mixin, simply create a div with class "pie-container" and the html5 data-attribute of "data-slices" to denote the number of slices this pie chart has:
  
 ```html
 <div id="pie1" class="pie-container" data-slices="5">
