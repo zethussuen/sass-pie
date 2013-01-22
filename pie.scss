@@ -1,47 +1,76 @@
-.pie-container {
-  height: 50px;
-  width: auto;
-
-  .pie-background {
-    background-color: grey;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -o-border-radius: 25px;
-    border-radius: 25px;
-  }
+@mixin pie($radius) {
+  $clip: $radius/2;
+  height: $radius;
+  width: $radius;
+  position: relative;
   .pie {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -o-border-radius: 25px;
-    border-radius: 25px;
-    clip: rect(0px, 25px, 50px, 0px);
+    width: $radius;
+    height: $radius;
+    -moz-border-radius: $clip;
+    -webkit-border-radius: $clip;
+    -o-border-radius: $clip;
+    border-radius: $clip;
+    clip: rect(0px, $clip, $radius, 0px);
+    &.color1 {
+      background-color: #d64231;
+    }
+    &.color2 {
+      background-color: #4284fc;
+    }
+    &.color3 {
+      background-color: #f5c827;
+    }
+    &.color4 {
+      background-color: #2ba553;
+    }
+  }
+  .pie-number {
+    height: $radius;
+    width: $radius;
+    position: absolute; 
+    text-align: center;
+    top: 50%;
+    margin-top: -$clip/2;
+    color: #ffffff;
+    font-size: $clip;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.75);
   }
   .hold {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -o-border-radius: 25px;
-    border-radius: 25px;
-    clip: rect(0px, 50px, 50px, 25px);
+    width: $radius;
+    height: $radius;
+    -moz-border-radius: $clip;
+    -webkit-border-radius: $clip;
+    -o-border-radius: $clip;
+    border-radius: $clip;
+    clip: rect(0px, $radius, $radius, $clip);
   }
-  .pie-number {
-    position: absolute; 
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    padding-top: 10px;
-    color: #ffffff;
-    font-size: 2em;
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-    text-shadow: 0px 1px 0px rgba(0,0,0,0.75);
+}
+@for $slices from 1 through 1 {
+  .pie-container[data-slices="#{$slices}"] {
+    $sliceNumber: 1;
+    $totalDeg: 0;
+    @while $sliceNumber <= 2 {
+      $deg: 180/$slices;
+      .pie-slice-#{$sliceNumber} {
+        -webkit-transform:rotate(#{$totalDeg}deg);
+        -moz-transform:rotate(#{$totalDeg}deg);
+        -o-transform:rotate(#{$totalDeg}deg);
+        -ms-transform:rotate(#{$totalDeg}deg);
+        transform:rotate(#{$totalDeg}deg);
+        .pie {
+          -webkit-transform:rotate(#{$deg}deg);
+          -moz-transform:rotate(#{$deg}deg);
+          -o-transform:rotate(#{$deg}deg);
+          -ms-transform:rotate(#{$totalDeg}deg);
+          transform:rotate(#{$deg}deg);
+        }
+      }
+      $sliceNumber: $sliceNumber+1;
+      $totalDeg: ($totalDeg+$deg);
+    }
   }
 }
 
@@ -55,11 +84,13 @@
         -webkit-transform:rotate(#{$totalDeg}deg);
         -moz-transform:rotate(#{$totalDeg}deg);
         -o-transform:rotate(#{$totalDeg}deg);
+        -ms-transform:rotate(#{$totalDeg}deg);
         transform:rotate(#{$totalDeg}deg);
         .pie {
           -webkit-transform:rotate(#{$deg}deg);
           -moz-transform:rotate(#{$deg}deg);
           -o-transform:rotate(#{$deg}deg);
+          -ms-transform:rotate(#{$deg}deg);
           transform:rotate(#{$deg}deg);
         }
       }
@@ -67,4 +98,13 @@
       $totalDeg: ($totalDeg+$deg);
     }
   }
+}
+
+
+#pie1 {
+  @include pie(100px);
+}
+
+#pie2 {
+  @include pie(50px);
 }

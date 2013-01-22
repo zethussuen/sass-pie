@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>SASS pie</title>
@@ -6,23 +7,18 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   </head>
   <body>
-    <div class="pie-container" data-slices="5">
-      <div class="pie-background"></div>
-      <div class="pie-slice-1 hold"><div class="pie" data-color="#ff0000"></div></div>
-      <div class="pie-slice-2 hold"><div class="pie" data-color="#ff0000"></div></div>
-      <div class="pie-slice-3 hold"><div class="pie" data-color="#ff0000"></div></div>
-      <div class="pie-slice-4 hold"><div class="pie" data-color="#ff0000"></div></div>
-      <div class="pie-slice-5 hold"><div class="pie" data-color="#000000"></div></div>
+    <div id="pie1" class="pie-container" data-slices="5">
+      <div class="pie-slice-1 hold"><div class="pie color1"></div></div>
+      <div class="pie-slice-2 hold"><div class="pie color1"></div></div>
+      <div class="pie-slice-3 hold"><div class="pie color2"></div></div>
+      <div class="pie-slice-4 hold"><div class="pie color3"></div></div>
+      <div class="pie-slice-5 hold"><div class="pie color4"></div></div>
       <div class="pie-number">5</div>
     </div>
-
-    <script type="text/javascript">
-      $(function(){
-        $('.pie').each(function(){
-          var bg = $(this).attr('data-color');
-          $(this).css('background-color', bg);
-        });
-      });
-    </script>
+    <div id="pie2" class="pie-container" data-slices="1">
+      <div class="pie-slice-1 hold"><div class="pie color1"></div></div>
+      <div class="pie-slice-2 hold"><div class="pie color1"></div></div>
+      <div class="pie-number">1</div>
+    </div>
   </body>
 </html>
