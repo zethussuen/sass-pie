@@ -16,7 +16,12 @@ The CSS is applied through the @mixin pie. To use the mixin, simply create a div
 </div>
 ```
  
-Then, in your css, include the mixin with the radius option, such as: <pre>@include pie(100px);</pre>
+Then, in your css, include the mixin with the radius option, such as: 
+```css
+#pie1 {
+  @include pie(100px);
+}
+```
 
 **SUPPORT**
 ---------------------------------------
