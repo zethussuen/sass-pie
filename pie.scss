@@ -1,0 +1,49 @@
+.pie-container {
+  height: 100px;
+
+  .pie-background {
+    background-color: grey;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+  }
+  .pie {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    clip: rect(0px, 50px, 100px, 0px);
+  }
+  .hold {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+}
+
+@for $slices from 2 through 10 {
+  .pie-container[data-slices="#{$slices}"] {
+    .pie-slice {
+      .pie {
+        background-color: #1b458b;
+        $deg: #{360/$slices}deg;
+        -webkit-transform:rotate($deg);
+        -moz-transform:rotate($deg);
+        -o-transform:rotate($deg);
+        transform:rotate($deg);
+      }
+    }
+  }
+}
