@@ -1,49 +1,70 @@
 .pie-container {
-  height: 100px;
+  height: 50px;
+  width: auto;
 
   .pie-background {
     background-color: grey;
     position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
   }
   .pie {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    clip: rect(0px, 50px, 100px, 0px);
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    clip: rect(0px, 25px, 50px, 0px);
   }
   .hold {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    clip: rect(0px, 100px, 100px, 50px);
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    clip: rect(0px, 50px, 50px, 25px);
+  }
+  .pie-number {
+    position: absolute; 
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 2em;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.75);
   }
 }
 
 @for $slices from 2 through 10 {
   .pie-container[data-slices="#{$slices}"] {
-    .pie-slice {
-      .pie {
-        background-color: #1b458b;
-        $deg: #{360/$slices}deg;
-        -webkit-transform:rotate($deg);
-        -moz-transform:rotate($deg);
-        -o-transform:rotate($deg);
-        transform:rotate($deg);
+    $sliceNumber: 1;
+    $totalDeg: 0;
+    @while $sliceNumber <= $slices {
+      $deg: 360/$slices;
+      .pie-slice-#{$sliceNumber} {
+        -webkit-transform:rotate(#{$totalDeg}deg);
+        -moz-transform:rotate(#{$totalDeg}deg);
+        -o-transform:rotate(#{$totalDeg}deg);
+        transform:rotate(#{$totalDeg}deg);
+        .pie {
+          -webkit-transform:rotate(#{$deg}deg);
+          -moz-transform:rotate(#{$deg}deg);
+          -o-transform:rotate(#{$deg}deg);
+          transform:rotate(#{$deg}deg);
+        }
       }
+      $sliceNumber: $sliceNumber+1;
+      $totalDeg: ($totalDeg+$deg);
     }
   }
 }

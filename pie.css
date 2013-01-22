@@ -1,92 +1,589 @@
 .pie-container {
-  height: 100px; }
+  height: 50px;
+  width: auto; }
   .pie-container .pie-background {
     background-color: grey;
     position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px; }
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px; }
   .pie-container .pie {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    clip: rect(0px, 50px, 100px, 0px); }
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    clip: rect(0px, 25px, 50px, 0px); }
   .pie-container .hold {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    clip: rect(0px, 100px, 100px, 50px); }
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    clip: rect(0px, 50px, 50px, 25px); }
+  .pie-container .pie-number {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 2em;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.75); }
 
-.pie-container[data-slices="2"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="2"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="2"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
+.pie-container[data-slices="2"] .pie-slice-2 {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg); }
+  .pie-container[data-slices="2"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
 
-.pie-container[data-slices="3"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="3"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="3"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg); }
+.pie-container[data-slices="3"] .pie-slice-2 {
   -webkit-transform: rotate(120deg);
   -moz-transform: rotate(120deg);
   -o-transform: rotate(120deg);
   transform: rotate(120deg); }
+  .pie-container[data-slices="3"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg); }
+.pie-container[data-slices="3"] .pie-slice-3 {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg); }
+  .pie-container[data-slices="3"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg); }
 
-.pie-container[data-slices="4"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="4"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="4"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+.pie-container[data-slices="4"] .pie-slice-2 {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg); }
+  .pie-container[data-slices="4"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+.pie-container[data-slices="4"] .pie-slice-3 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+  .pie-container[data-slices="4"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+.pie-container[data-slices="4"] .pie-slice-4 {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg); }
+  .pie-container[data-slices="4"] .pie-slice-4 .pie {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
 
-.pie-container[data-slices="5"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="5"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="5"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(72deg);
+    -moz-transform: rotate(72deg);
+    -o-transform: rotate(72deg);
+    transform: rotate(72deg); }
+.pie-container[data-slices="5"] .pie-slice-2 {
   -webkit-transform: rotate(72deg);
   -moz-transform: rotate(72deg);
   -o-transform: rotate(72deg);
   transform: rotate(72deg); }
+  .pie-container[data-slices="5"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(72deg);
+    -moz-transform: rotate(72deg);
+    -o-transform: rotate(72deg);
+    transform: rotate(72deg); }
+.pie-container[data-slices="5"] .pie-slice-3 {
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -o-transform: rotate(144deg);
+  transform: rotate(144deg); }
+  .pie-container[data-slices="5"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(72deg);
+    -moz-transform: rotate(72deg);
+    -o-transform: rotate(72deg);
+    transform: rotate(72deg); }
+.pie-container[data-slices="5"] .pie-slice-4 {
+  -webkit-transform: rotate(216deg);
+  -moz-transform: rotate(216deg);
+  -o-transform: rotate(216deg);
+  transform: rotate(216deg); }
+  .pie-container[data-slices="5"] .pie-slice-4 .pie {
+    -webkit-transform: rotate(72deg);
+    -moz-transform: rotate(72deg);
+    -o-transform: rotate(72deg);
+    transform: rotate(72deg); }
+.pie-container[data-slices="5"] .pie-slice-5 {
+  -webkit-transform: rotate(288deg);
+  -moz-transform: rotate(288deg);
+  -o-transform: rotate(288deg);
+  transform: rotate(288deg); }
+  .pie-container[data-slices="5"] .pie-slice-5 .pie {
+    -webkit-transform: rotate(72deg);
+    -moz-transform: rotate(72deg);
+    -o-transform: rotate(72deg);
+    transform: rotate(72deg); }
 
-.pie-container[data-slices="6"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="6"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="6"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg); }
+.pie-container[data-slices="6"] .pie-slice-2 {
   -webkit-transform: rotate(60deg);
   -moz-transform: rotate(60deg);
   -o-transform: rotate(60deg);
   transform: rotate(60deg); }
+  .pie-container[data-slices="6"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg); }
+.pie-container[data-slices="6"] .pie-slice-3 {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg); }
+  .pie-container[data-slices="6"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg); }
+.pie-container[data-slices="6"] .pie-slice-4 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+  .pie-container[data-slices="6"] .pie-slice-4 .pie {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg); }
+.pie-container[data-slices="6"] .pie-slice-5 {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg); }
+  .pie-container[data-slices="6"] .pie-slice-5 .pie {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg); }
+.pie-container[data-slices="6"] .pie-slice-6 {
+  -webkit-transform: rotate(300deg);
+  -moz-transform: rotate(300deg);
+  -o-transform: rotate(300deg);
+  transform: rotate(300deg); }
+  .pie-container[data-slices="6"] .pie-slice-6 .pie {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg); }
 
-.pie-container[data-slices="7"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="7"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="7"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(51.42857deg);
+    -moz-transform: rotate(51.42857deg);
+    -o-transform: rotate(51.42857deg);
+    transform: rotate(51.42857deg); }
+.pie-container[data-slices="7"] .pie-slice-2 {
   -webkit-transform: rotate(51.42857deg);
   -moz-transform: rotate(51.42857deg);
   -o-transform: rotate(51.42857deg);
   transform: rotate(51.42857deg); }
+  .pie-container[data-slices="7"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(51.42857deg);
+    -moz-transform: rotate(51.42857deg);
+    -o-transform: rotate(51.42857deg);
+    transform: rotate(51.42857deg); }
+.pie-container[data-slices="7"] .pie-slice-3 {
+  -webkit-transform: rotate(102.85714deg);
+  -moz-transform: rotate(102.85714deg);
+  -o-transform: rotate(102.85714deg);
+  transform: rotate(102.85714deg); }
+  .pie-container[data-slices="7"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(51.42857deg);
+    -moz-transform: rotate(51.42857deg);
+    -o-transform: rotate(51.42857deg);
+    transform: rotate(51.42857deg); }
+.pie-container[data-slices="7"] .pie-slice-4 {
+  -webkit-transform: rotate(154.28571deg);
+  -moz-transform: rotate(154.28571deg);
+  -o-transform: rotate(154.28571deg);
+  transform: rotate(154.28571deg); }
+  .pie-container[data-slices="7"] .pie-slice-4 .pie {
+    -webkit-transform: rotate(51.42857deg);
+    -moz-transform: rotate(51.42857deg);
+    -o-transform: rotate(51.42857deg);
+    transform: rotate(51.42857deg); }
+.pie-container[data-slices="7"] .pie-slice-5 {
+  -webkit-transform: rotate(205.71429deg);
+  -moz-transform: rotate(205.71429deg);
+  -o-transform: rotate(205.71429deg);
+  transform: rotate(205.71429deg); }
+  .pie-container[data-slices="7"] .pie-slice-5 .pie {
+    -webkit-transform: rotate(51.42857deg);
+    -moz-transform: rotate(51.42857deg);
+    -o-transform: rotate(51.42857deg);
+    transform: rotate(51.42857deg); }
+.pie-container[data-slices="7"] .pie-slice-6 {
+  -webkit-transform: rotate(257.14286deg);
+  -moz-transform: rotate(257.14286deg);
+  -o-transform: rotate(257.14286deg);
+  transform: rotate(257.14286deg); }
+  .pie-container[data-slices="7"] .pie-slice-6 .pie {
+    -webkit-transform: rotate(51.42857deg);
+    -moz-transform: rotate(51.42857deg);
+    -o-transform: rotate(51.42857deg);
+    transform: rotate(51.42857deg); }
+.pie-container[data-slices="7"] .pie-slice-7 {
+  -webkit-transform: rotate(308.57143deg);
+  -moz-transform: rotate(308.57143deg);
+  -o-transform: rotate(308.57143deg);
+  transform: rotate(308.57143deg); }
+  .pie-container[data-slices="7"] .pie-slice-7 .pie {
+    -webkit-transform: rotate(51.42857deg);
+    -moz-transform: rotate(51.42857deg);
+    -o-transform: rotate(51.42857deg);
+    transform: rotate(51.42857deg); }
 
-.pie-container[data-slices="8"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="8"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="8"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.pie-container[data-slices="8"] .pie-slice-2 {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg); }
+  .pie-container[data-slices="8"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.pie-container[data-slices="8"] .pie-slice-3 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg); }
+  .pie-container[data-slices="8"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.pie-container[data-slices="8"] .pie-slice-4 {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg); }
+  .pie-container[data-slices="8"] .pie-slice-4 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.pie-container[data-slices="8"] .pie-slice-5 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+  .pie-container[data-slices="8"] .pie-slice-5 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.pie-container[data-slices="8"] .pie-slice-6 {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg); }
+  .pie-container[data-slices="8"] .pie-slice-6 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.pie-container[data-slices="8"] .pie-slice-7 {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg); }
+  .pie-container[data-slices="8"] .pie-slice-7 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.pie-container[data-slices="8"] .pie-slice-8 {
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg); }
+  .pie-container[data-slices="8"] .pie-slice-8 .pie {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
 
-.pie-container[data-slices="9"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="9"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="9"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-2 {
   -webkit-transform: rotate(40deg);
   -moz-transform: rotate(40deg);
   -o-transform: rotate(40deg);
   transform: rotate(40deg); }
+  .pie-container[data-slices="9"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-3 {
+  -webkit-transform: rotate(80deg);
+  -moz-transform: rotate(80deg);
+  -o-transform: rotate(80deg);
+  transform: rotate(80deg); }
+  .pie-container[data-slices="9"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-4 {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg); }
+  .pie-container[data-slices="9"] .pie-slice-4 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-5 {
+  -webkit-transform: rotate(160deg);
+  -moz-transform: rotate(160deg);
+  -o-transform: rotate(160deg);
+  transform: rotate(160deg); }
+  .pie-container[data-slices="9"] .pie-slice-5 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-6 {
+  -webkit-transform: rotate(200deg);
+  -moz-transform: rotate(200deg);
+  -o-transform: rotate(200deg);
+  transform: rotate(200deg); }
+  .pie-container[data-slices="9"] .pie-slice-6 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-7 {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg); }
+  .pie-container[data-slices="9"] .pie-slice-7 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-8 {
+  -webkit-transform: rotate(280deg);
+  -moz-transform: rotate(280deg);
+  -o-transform: rotate(280deg);
+  transform: rotate(280deg); }
+  .pie-container[data-slices="9"] .pie-slice-8 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
+.pie-container[data-slices="9"] .pie-slice-9 {
+  -webkit-transform: rotate(320deg);
+  -moz-transform: rotate(320deg);
+  -o-transform: rotate(320deg);
+  transform: rotate(320deg); }
+  .pie-container[data-slices="9"] .pie-slice-9 .pie {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg); }
 
-.pie-container[data-slices="10"] .pie-slice .pie {
-  background-color: #1b458b;
+.pie-container[data-slices="10"] .pie-slice-1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .pie-container[data-slices="10"] .pie-slice-1 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-2 {
   -webkit-transform: rotate(36deg);
   -moz-transform: rotate(36deg);
   -o-transform: rotate(36deg);
   transform: rotate(36deg); }
+  .pie-container[data-slices="10"] .pie-slice-2 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-3 {
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg); }
+  .pie-container[data-slices="10"] .pie-slice-3 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-4 {
+  -webkit-transform: rotate(108deg);
+  -moz-transform: rotate(108deg);
+  -o-transform: rotate(108deg);
+  transform: rotate(108deg); }
+  .pie-container[data-slices="10"] .pie-slice-4 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-5 {
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -o-transform: rotate(144deg);
+  transform: rotate(144deg); }
+  .pie-container[data-slices="10"] .pie-slice-5 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-6 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+  .pie-container[data-slices="10"] .pie-slice-6 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-7 {
+  -webkit-transform: rotate(216deg);
+  -moz-transform: rotate(216deg);
+  -o-transform: rotate(216deg);
+  transform: rotate(216deg); }
+  .pie-container[data-slices="10"] .pie-slice-7 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-8 {
+  -webkit-transform: rotate(252deg);
+  -moz-transform: rotate(252deg);
+  -o-transform: rotate(252deg);
+  transform: rotate(252deg); }
+  .pie-container[data-slices="10"] .pie-slice-8 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-9 {
+  -webkit-transform: rotate(288deg);
+  -moz-transform: rotate(288deg);
+  -o-transform: rotate(288deg);
+  transform: rotate(288deg); }
+  .pie-container[data-slices="10"] .pie-slice-9 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
+.pie-container[data-slices="10"] .pie-slice-10 {
+  -webkit-transform: rotate(324deg);
+  -moz-transform: rotate(324deg);
+  -o-transform: rotate(324deg);
+  transform: rotate(324deg); }
+  .pie-container[data-slices="10"] .pie-slice-10 .pie {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    transform: rotate(36deg); }
