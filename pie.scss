@@ -1,0 +1,108 @@
+// GENERIC MIXINS
+@mixin border-radius($px) {
+  -moz-border-radius: $px;
+  -webkit-border-radius: $px;
+  -o-border-radius: $px;
+  border-radius: $px;
+}
+
+@mixin transform-rotate($deg) {
+  -webkit-transform:rotate($deg);
+  -moz-transform:rotate($deg);
+  -o-transform:rotate($deg);
+  -ms-transform:rotate($deg);
+  transform:rotate($deg);
+}
+
+
+
+// PIE MIXIN STARTS HERE
+@mixin pie($radius) {
+  $clip: $radius/2;
+  height: $radius;
+  width: $radius;
+  position: relative;
+  .pie {
+    position: absolute;
+    width: $radius;
+    height: $radius;
+    @include border-radius($clip);
+    clip: rect(0px, $clip, $radius, 0px);
+    &.color1 {
+      background-color: #d64231;
+    }
+    &.color2 {
+      background-color: #4284fc;
+    }
+    &.color3 {
+      background-color: #f5c827;
+    }
+    &.color4 {
+      background-color: #2ba553;
+    }
+  }
+  .pie-number {
+    height: $radius;
+    width: $radius;
+    position: absolute; 
+    text-align: center;
+    top: 50%;
+    margin-top: -$clip/2;
+    color: #ffffff;
+    font-size: $clip;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.75);
+  }
+  .hold {
+    position: absolute;
+    width: $radius;
+    height: $radius;
+    @include border-radius($clip);
+    clip: rect(0px, $radius, $radius, $clip);
+  }
+}
+
+@for $slices from 1 through 10 {
+  .pie-container[data-slices="#{$slices}"] {
+    // set some var defaults
+    $sliceNumber: 1; 
+    $totalDeg: 0;
+    $sliceTotal: 0;
+    $baseDegree: 360;
+
+    @if $slices == 1 { // check to see if just one slice
+      $sliceTotal: 2; // run loop twice to draw both halves
+      $baseDegree: 180; // base degree for 2 iterations
+    }
+    @else {
+      $sliceTotal: $slices; // for non-1, set loop to # of slices
+    }
+    @while $sliceNumber <= $sliceTotal {
+      $deg: $baseDegree/$slices;
+      .pie-slice-#{$sliceNumber} {
+        @include transform-rotate(#{$totalDeg}deg);
+        .pie {
+          @include transform-rotate(#{$deg}deg);
+        }
+      }
+      $sliceNumber: $sliceNumber+1;
+      $totalDeg: ($totalDeg+$deg);
+    }
+  }
+}
+
+
+#pie1 {
+  @include pie(100px);
+  margin: 20px;
+}
+
+#pie2 {
+  @include pie(50px);
+  margin: 20px;
+}
+
+#pie3 {
+  @include pie(300px);
+  margin: 20px;
+}
