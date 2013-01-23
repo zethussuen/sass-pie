@@ -1,6 +1,6 @@
 **SASS pie** by @zethussuen
 ---------------------------------------
-A pure HTML/CSS implementation of pie charts using SASS/SCSS.
+A pure HTML/CSS implementation of pie charts using sass mixins. [See Examples](http://zethussuen.github.com/sass-pie/)
 
 **USAGE**
 ---------------------------------------
