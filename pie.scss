@@ -1,3 +1,10 @@
+@mixin border-radius($px) {
+  -moz-border-radius: $px;
+  -webkit-border-radius: $px;
+  -o-border-radius: $px;
+  border-radius: $px;
+}
+
 @mixin pie($radius) {
   $clip: $radius/2;
   height: $radius;
@@ -7,10 +14,7 @@
     position: absolute;
     width: $radius;
     height: $radius;
-    -moz-border-radius: $clip;
-    -webkit-border-radius: $clip;
-    -o-border-radius: $clip;
-    border-radius: $clip;
+    @include border-radius($clip);
     clip: rect(0px, $clip, $radius, 0px);
     &.color1 {
       background-color: #d64231;
@@ -41,45 +45,28 @@
     position: absolute;
     width: $radius;
     height: $radius;
-    -moz-border-radius: $clip;
-    -webkit-border-radius: $clip;
-    -o-border-radius: $clip;
-    border-radius: $clip;
+    @include border-radius($clip);
     clip: rect(0px, $radius, $radius, $clip);
   }
 }
-@for $slices from 1 through 1 {
-  .pie-container[data-slices="#{$slices}"] {
-    $sliceNumber: 1;
-    $totalDeg: 0;
-    @while $sliceNumber <= 2 {
-      $deg: 180/$slices;
-      .pie-slice-#{$sliceNumber} {
-        -webkit-transform:rotate(#{$totalDeg}deg);
-        -moz-transform:rotate(#{$totalDeg}deg);
-        -o-transform:rotate(#{$totalDeg}deg);
-        -ms-transform:rotate(#{$totalDeg}deg);
-        transform:rotate(#{$totalDeg}deg);
-        .pie {
-          -webkit-transform:rotate(#{$deg}deg);
-          -moz-transform:rotate(#{$deg}deg);
-          -o-transform:rotate(#{$deg}deg);
-          -ms-transform:rotate(#{$totalDeg}deg);
-          transform:rotate(#{$deg}deg);
-        }
-      }
-      $sliceNumber: $sliceNumber+1;
-      $totalDeg: ($totalDeg+$deg);
-    }
-  }
-}
 
-@for $slices from 2 through 10 {
+@for $slices from 1 through 10 {
   .pie-container[data-slices="#{$slices}"] {
-    $sliceNumber: 1;
+    // set some var defaults
+    $sliceNumber: 1; 
     $totalDeg: 0;
-    @while $sliceNumber <= $slices {
-      $deg: 360/$slices;
+    $sliceTotal: 0;
+    $baseDegree: 360;
+
+    @if $slices == 1 { // check to see if just one slice
+      $sliceTotal: 2; // run loop twice to draw both halves
+      $baseDegree: 180; // base degree for 2 iterations
+    }
+    @else {
+      $sliceTotal: $slices; // for non-1, set loop to # of slices
+    }
+    @while $sliceNumber <= $sliceTotal {
+      $deg: $baseDegree/$slices;
       .pie-slice-#{$sliceNumber} {
         -webkit-transform:rotate(#{$totalDeg}deg);
         -moz-transform:rotate(#{$totalDeg}deg);
@@ -103,8 +90,15 @@
 
 #pie1 {
   @include pie(100px);
+  margin: 20px;
 }
 
 #pie2 {
   @include pie(50px);
+  margin: 20px;
+}
+
+#pie3 {
+  @include pie(300px);
+  margin: 20px;
 }
