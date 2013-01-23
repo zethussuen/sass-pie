@@ -1,3 +1,4 @@
+// GENERIC MIXINS
 @mixin border-radius($px) {
   -moz-border-radius: $px;
   -webkit-border-radius: $px;
@@ -5,6 +6,17 @@
   border-radius: $px;
 }
 
+@mixin transform-rotate($deg) {
+  -webkit-transform:rotate($deg);
+  -moz-transform:rotate($deg);
+  -o-transform:rotate($deg);
+  -ms-transform:rotate($deg);
+  transform:rotate($deg);
+}
+
+
+
+// PIE MIXIN STARTS HERE
 @mixin pie($radius) {
   $clip: $radius/2;
   height: $radius;
@@ -68,17 +80,9 @@
     @while $sliceNumber <= $sliceTotal {
       $deg: $baseDegree/$slices;
       .pie-slice-#{$sliceNumber} {
-        -webkit-transform:rotate(#{$totalDeg}deg);
-        -moz-transform:rotate(#{$totalDeg}deg);
-        -o-transform:rotate(#{$totalDeg}deg);
-        -ms-transform:rotate(#{$totalDeg}deg);
-        transform:rotate(#{$totalDeg}deg);
+        @include transform-rotate(#{$totalDeg}deg);
         .pie {
-          -webkit-transform:rotate(#{$deg}deg);
-          -moz-transform:rotate(#{$deg}deg);
-          -o-transform:rotate(#{$deg}deg);
-          -ms-transform:rotate(#{$deg}deg);
-          transform:rotate(#{$deg}deg);
+          @include transform-rotate(#{$deg}deg);
         }
       }
       $sliceNumber: $sliceNumber+1;
